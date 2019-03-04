@@ -1,0 +1,22 @@
+##############################################################################
+### DOWNLOAD QUEUE                                                         ###
+
+SaveQueue=<%= scope['::ombi::save_queue'] ? 'yes' : 'no' %>
+FlushQueue=<%= scope['::ombi::flush_queue'] ? 'yes' : 'no' %>
+ReloadQueue=<%= scope['::ombi::reload_queue'] ? 'yes' : 'no' %>
+ContinuePartial=<%= scope['::ombi::continue_partial'] ? 'yes' : 'no' %>
+PropagationDelay=<%= scope['::ombi::propagation_delay'] %>
+Decode=<%= scope['::ombi::decode'] ? 'yes' : 'no' %>
+ArticleCache=<%= scope['::ombi::article_cache'] %>
+DirectWrite=<%= scope['::ombi::direct_write'] ? 'yes' : 'no' %>
+WriteBuffer=<%= scope['::ombi::write_buffer'] %>
+CrcCheck=<%= scope['::ombi::crc_check'] ? 'yes' : 'no' %>
+FileNaming=<%= scope['::ombi::file_naming'] %>
+ReorderFiles=<%= scope['::ombi::reorder_files'] ? 'yes' : 'no' %>
+PostStrategy=<%= scope['::ombi::post_strategy'] %>
+DiskSpace=<%= scope['::ombi::disk_space'] %>
+NzbCleanupDisk=<%= scope['::ombi::nzb_cleanup_disk'] ? 'yes' : 'no' %>
+KeepHistory=<%= scope['::ombi::keep_history'] %>
+FeedHistory=<%= scope['::ombi::feed_history'] %>
+
+

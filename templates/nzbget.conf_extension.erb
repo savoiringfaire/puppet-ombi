@@ -1,0 +1,10 @@
+##############################################################################
+### EXTENSION SCRIPTS                                                      ###
+
+Extensions=<%= scope['::ombi::extensions'].join(',') if scope['::ombi::extensions'] %>
+ScriptOrder=<%= scope['::ombi::script_order'].join(',') if scope['::ombi::script_order'] %>
+ScriptPauseQueue=<%= scope['::ombi::script_pause_queue'] ? 'yes' : 'no' %>
+ShellOverride=<%= scope['::ombi::shell_override'].join(',') if scope['::ombi::shell_override'] %>
+EventInterval=<%= scope['::ombi::event_interval'] %>
+
+
