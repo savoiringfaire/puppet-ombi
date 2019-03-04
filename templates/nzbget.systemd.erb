@@ -1,0 +1,21 @@
+[Unit]
+Description=ombi Daemon
+Documentation=http://ombi.net/Documentation
+After=network.target
+<% if not scope['::ombi::daemon_required_mounts'].nil? and scope['::ombi::daemon_required_mounts'] -%>
+RequiresMountsFor=<%= scope['::ombi::daemon_required_mounts'].join(' ') %>
+<% end -%>
+
+[Service]
+User=<%= scope['::ombi::user'] %>
+Group=<%= scope['::ombi::group'] %>
+Type=forking
+ExecStart=/usr/bin/ombi -c "<%= scope['::ombi::config_file'] %>" -D
+ExecStop=/usr/bin/ombi -Q
+ExecReload=/usr/bin/ombi -O
+KillMode=process
+Restart=on-failure
+
+
+[Install]
+WantedBy=multi-user.target
